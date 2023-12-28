@@ -8,9 +8,9 @@ const app = express();
 
 const server = http.createServer(app);
 const io = socketIO(server);
-app.use(cors({
-    origin: 'https://project-1-get-every-user-interaction-of-the-ui.vercel.app'
-}));
+// app.use(cors({
+//     origin: 'https://project-1-get-every-user-interaction-of-the-ui.vercel.app'
+// }));
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', 'https://project-1-get-every-user-interaction-of-the-ui.vercel.app');
