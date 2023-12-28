@@ -11,17 +11,15 @@ const io = socketIO(server);
 app.use(cors({
     origin: 'https://project-1-get-every-user-interaction-of-the-ui.vercel.app'
 }));
-// https://project-1-get-every-user-interaction-of-the-ui.vercel.app/OSinfo
+
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://project-1-get-every-user-interaction-of-the-ui.vercel.app');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+});
 
 
-// database
-
-async function Database() {
-
-   
-
-
-}
 
 
 
@@ -45,10 +43,10 @@ io.on('connection', (socket) => {
 
 
         supabase.from('userinfo').update({
-            lastModified:lasttime,
+            lastModified: lasttime,
             Online: false
         }).eq(
-            "socketid",id
+            "socketid", id
         ).select().then((res) => {
             console.log(res.statusText)
 
