@@ -9,7 +9,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIO(server);
 app.use(cors({
-    origin: 'https://project-1-get-every-user-interaction-of-the-ui.vercel.app/OSinfo'
+    origin: 'https://project-1-get-every-user-interaction-of-the-ui.vercel.app'
 }));
 // https://project-1-get-every-user-interaction-of-the-ui.vercel.app/OSinfo
 
